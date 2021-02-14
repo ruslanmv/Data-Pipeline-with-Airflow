@@ -81,8 +81,6 @@ git clone https://github.com/ruslanmv/Data-Pipeline-with-Airflow.git
 cd Data-Pipeline-with-Airflow
 ```
 
-
-
 4. Create a virtual environment using coda (or any other tool). Install Python 3.7 in your virtual environment. I’m going to call the environment airflow-tutorial.( with Python 3.8 + the current script of docker-compose.yml doesnt work.  )
 
 ```
@@ -95,7 +93,13 @@ conda create --name airflow-pipeline python=3.7
 conda activate airflow-pipeline
 ```
 
-6. Print the absolute path to your working directory by typing pwd.
+6 - We  install the dependency needed
+
+```
+pip install -r requirements.txt
+```
+
+Print the absolute path to your working directory by typing pwd.
 
 I get `/Users/ruslan/Documents/Data-Pipeline-with-Airflow` but you might get something different. Copy this path
 
@@ -215,19 +219,11 @@ airflow initdb
 
 
 
-
-
-
-
 ad the end you will recieve a message of **Done**, now you  can run the webserver by typing `airflow webserver`
 
 
 
 ![](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-13%2520at%252015.00.26.png)
-
-
-
-
 
 
 
@@ -248,21 +244,20 @@ airflow scheduler
 
 
 
-
-
 Now both our scheduler and webserver is running on `localhost:8080`
 
 # PART 2 - Cluster creation
 
 We enter to the AWS console and we  create cluster on Amazon Reshift cluster
 
-![Screenshot 2021-02-13 at 20.34.15](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-13%2520at%252020.34.15.png)
+
+![Screenshot 2021-02-13 at 20.34.15](https://ruslanmv.com/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%202021-02-13%20at%2020.34.15.png)
 
 
 
 In this project I will use a **Free trial**
 
-![Screenshot 2021-02-13 at 20.34.49](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-13%2520at%252020.34.49.png)
+![Screenshot 2021-02-13 at 20.34.49](https://ruslanmv.com/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%202021-02-13%20at%2020.34.49.png)
 
 
 
@@ -282,15 +277,15 @@ Master password:  \****
 
 
 
-![Screenshot 2021-02-13 at 20.35.52](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-13%2520at%252020.35.52.png)
+![Screenshot 2021-02-13 at 20.35.52](https://ruslanmv.com/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%202021-02-13%20at%2020.35.52.png)
 
 We should add to the cluster permissions to read S3 buckets
 
-![Screenshot 2021-02-13 at 20.36.22](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-13%2520at%252020.36.22.png)
+![Screenshot 2021-02-13 at 20.36.22](https://ruslanmv.com/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%202021-02-13%20at%2020.36.22.png)
 
 with Iam roles
 
-![Screenshot 2021-02-14 at 13.35.10](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-14%2520at%252013.35.10.png)
+![Screenshot 2021-02-14 at 13.35.10](https://ruslanmv.com/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%202021-02-14%20at%2013.35.10.png)
 
 with Permissions policies  in json:
 
@@ -326,22 +321,20 @@ Here, we'll use Airflow's UI to configure your AWS credentials and connection to
 
 
 
-
-
-1. Under **Connections**, select **Create**.
+1 Under **Connections**, select **Create**.
 
 ![](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-13%2520at%252015.17.39.png)
 
 
 
-1. On the create connection page, enter the following values:
+2 On the create connection page, enter the following values:
 
-   - **Conn Id**: Enter `aws_credentials`.
-   - **Conn Type**: Enter `Amazon Web Services`.
-   - **Login**: Enter your **Access key ID** from the IAM User credentials you downloaded earlier.
-   - **Password**: Enter your **Secret access key** from the IAM User credentials you downloaded earlier.
+- **Conn Id**: Enter `aws_credentials`.
+- **Conn Type**: Enter `Amazon Web Services`.
+- **Login**: Enter your **Access key ID** from the IAM User credentials you downloaded earlier.
+- **Password**: Enter your **Secret access key** from the IAM User credentials you downloaded earlier.
 
-   Once you've entered these values, select **Save and Add Another**.
+Once you've entered these values, select **Save and Add Another**.
 
 
 
@@ -349,17 +342,17 @@ Here, we'll use Airflow's UI to configure your AWS credentials and connection to
 
 
 
-1. On the next create connection page, enter the following values:
+3 On the next create connection page, enter the following values:
 
-   - **Conn Id**: Enter `redshift`.
-   - **Conn Type**: Enter `Postgres`.
-   - **Host**: Enter the endpoint of your Redshift cluster, excluding the port at the end. You can find this by selecting your cluster in the **Clusters** page of the Amazon Redshift console. See where this is located in the screenshot below. IMPORTANT: Make sure to **NOT** include the port at the end of the Redshift endpoint string.
-   - **Schema**: Enter `dev`. This is the Redshift database you want to connect to.
-   - **Login**: Enter `awsuser`.
-   - **Password**: Enter the password you created when launching your Redshift cluster.
-   - **Port**: Enter `5439`.
+- **Conn Id**: Enter `redshift`.
+- **Conn Type**: Enter `Postgres`.
+- **Host**: Enter the endpoint of your Redshift cluster, excluding the port at the end. You can find this by selecting your cluster in the **Clusters** page of the Amazon Redshift console. See where this is located in the screenshot below. IMPORTANT: Make sure to **NOT** include the port at the end of the Redshift endpoint string.
+- **Schema**: Enter `dev`. This is the Redshift database you want to connect to.
+- **Login**: Enter `awsuser`.
+- **Password**: Enter the password you created when launching your Redshift cluster.
+- **Port**: Enter `5439`.
 
-   Once you've entered these values, select **Save**.
+Once you've entered these values, select **Save**.
 
 
 
@@ -376,8 +369,6 @@ Awesome! You're now all configured to run Airflow with Redshift.
 
 
 ## PART 4  Run DAG
-
-####
 
 Start the DAG by switching it state from OFF to ON.
 
