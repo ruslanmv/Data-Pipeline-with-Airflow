@@ -16,7 +16,7 @@ You'll be provided with a helpers class that contains all the SQL transformation
 
 
 
-![example-dag](../assets/images/posts/README/example-dag-3315853.png)
+![example-dag](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/example-dag-3315853.png)
 
 
 
@@ -31,12 +31,12 @@ Depending  your purposes I will show both of them.
 
 For the Project of **Udacity** is easier follow the **automatic**  but if you want to keep more control for deployments of your work. You can try the manual.
 
-# Requirements 
+# Requirements
 
 * Install [Anaconda](https://www.anaconda.com/products/individual) with  [Python3.7](https://www.python.org/downloads/)
 * Install [Docker](https://www.docker.com/)
 * Install [Docker Compose](https://docs.docker.com/compose/install/)
-* [AWS](https://aws.amazon.com/) account and [Redshift](https://aws.amazon.com/redshift/) cluster 
+* [AWS](https://aws.amazon.com/) account and [Redshift](https://aws.amazon.com/redshift/) cluster
 
 For this project, you'll be working with two datasets. Here are the s3 links for each:
 
@@ -49,7 +49,7 @@ We would like to construct a flow like this
 
 
 
-![img](../assets/images/posts/README/screenshot-2019-01-21-at-20.55.39.png)
+![img](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/screenshot-2019-01-21-at-20.55.39.png)
 
 
 
@@ -59,7 +59,7 @@ We would like to construct a flow like this
 
 ## PART 1 - Airflow installation (automatic)
 
-Follow these steps to install Airflow 
+Follow these steps to install Airflow
 
 \1. Open a Terminal window.
 
@@ -114,11 +114,11 @@ If you are satisfied with the default configurations you can just start the cont
 docker-compose up
 ```
 
-<img src="../../23-GITHUB/ruslanmv/ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-14%2520at%252016.36.53.png" alt="Screenshot 2021-02-14 at 16.36.53" style="zoom:50%;" />
+<img src="https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-14%2520at%252016.36.53.png" alt="Screenshot 2021-02-14 at 16.36.53" style="zoom:50%;" />
 
 Aftet this step you should wait until your screen says that is ready
 
-![Screenshot 2021-02-14 at 16.41.06](../assets/images/posts/README/Screenshot%202021-02-14%20at%2016.41.06.png)
+![Screenshot 2021-02-14 at 16.41.06](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-14%2520at%252016.41.06.png)
 
 \10. Open the Airflow UI
 
@@ -126,9 +126,9 @@ Go to your web browswer and type  http://localhost:8080
 
 
 
-![Screenshot 2021-02-14 at 13.24.51](../assets/images/posts/README/Screenshot%202021-02-14%20at%2013.24.51.png)
+![Screenshot 2021-02-14 at 13.24.51](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-14%2520at%252013.24.51.png)
 
-Username: **user** 
+Username: **user**
 
 Password: **password**
 
@@ -252,13 +252,13 @@ Now both our scheduler and webserver is running on `localhost:8080`
 
 We enter to the AWS console and we  create cluster on Amazon Reshift cluster
 
-![Screenshot 2021-02-13 at 20.34.15](../assets/images/posts/README/Screenshot%202021-02-13%20at%2020.34.15.png)
+![Screenshot 2021-02-13 at 20.34.15](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-13%2520at%252020.34.15.png)
 
 
 
 In this project I will use a **Free trial**
 
-![Screenshot 2021-02-13 at 20.34.49](../assets/images/posts/README/Screenshot%202021-02-13%20at%2020.34.49.png)
+![Screenshot 2021-02-13 at 20.34.49](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-13%2520at%252020.34.49.png)
 
 
 
@@ -278,15 +278,15 @@ Master password:  \****
 
 
 
-![Screenshot 2021-02-13 at 20.35.52](../assets/images/posts/README/Screenshot%202021-02-13%20at%2020.35.52.png)
+![Screenshot 2021-02-13 at 20.35.52](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-13%2520at%252020.35.52.png)
 
 We should add to the cluster permissions to read S3 buckets
 
-![Screenshot 2021-02-13 at 20.36.22](../assets/images/posts/README/Screenshot%202021-02-13%20at%2020.36.22.png)
+![Screenshot 2021-02-13 at 20.36.22](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-13%2520at%252020.36.22.png)
 
 with Iam roles
 
-![Screenshot 2021-02-14 at 13.35.10](../assets/images/posts/README/Screenshot%202021-02-14%20at%2013.35.10.png)
+![Screenshot 2021-02-14 at 13.35.10](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-14%2520at%252013.35.10.png)
 
 with Permissions policies  in json:
 
@@ -318,7 +318,7 @@ Here, we'll use Airflow's UI to configure your AWS credentials and connection to
 
 
 
-![Screenshot 2021-02-14 at 17.06.05](../assets/images/posts/README/Screenshot%202021-02-14%20at%2017.06.05.png)
+![Screenshot 2021-02-14 at 17.06.05](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-14%2520at%252017.06.05.png)
 
 
 
@@ -339,7 +339,7 @@ Here, we'll use Airflow's UI to configure your AWS credentials and connection to
 
 
 
-![connection-aws-credentials](../assets/images/posts/README/connection-aws-credentials.png)
+![connection-aws-credentials](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/connection-aws-credentials.png)
 
 
 
@@ -357,11 +357,11 @@ Here, we'll use Airflow's UI to configure your AWS credentials and connection to
 
 
 
-![cluster-details](../assets/images/posts/README/cluster-details.png)
+![cluster-details](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/cluster-details.png)
 
 
 
-![connection-redshift](../assets/images/posts/README/connection-redshift.png)
+![connection-redshift](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/connection-redshift.png)
 
 
 
@@ -371,13 +371,13 @@ Awesome! You're now all configured to run Airflow with Redshift.
 
 ## PART 4  Run DAG
 
-#### 
+####
 
-Start the DAG by switching it state from OFF to ON. 
+Start the DAG by switching it state from OFF to ON.
 
 
 
-<img src="../../23-GITHUB/ruslanmv/ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-14%2520at%252017.08.19.png" style="zoom:50%;" />
+<img src="https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-14%2520at%252017.08.19.png" style="zoom:50%;" />
 
 In the DAG, add `default parameters` according to these guidelines
 
@@ -391,7 +391,7 @@ In the DAG, add `default parameters` according to these guidelines
 
 - Do not email on retry
 
-  
+
 
 Refresh the page and click on the awst_redshift_dag to view the current state. It will take time to run the complete DAG
 
@@ -410,4 +410,3 @@ You should be able to execute the DAG successfully, but if you check the logs, y
 
 
 **Congratulations** we have created a Redshift cluster and executed a pipeline with Airflow!
-
