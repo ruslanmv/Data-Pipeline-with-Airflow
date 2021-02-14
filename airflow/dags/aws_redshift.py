@@ -18,7 +18,7 @@ default_args = {
 
 dag = DAG('aws_redshift_dag',
           default_args=default_args,
-          description='Extract Load and Transform data from S3 to Redshift',
+          description='Extract data from S3 and transform to Redshift',
           schedule_interval='@hourly',
           catchup=False
           )
