@@ -317,13 +317,13 @@ Here, we'll use Airflow's UI to configure your AWS credentials and connection to
 
 
 
-![Screenshot 2021-02-14 at 17.06.05](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-14%2520at%252017.06.05.png)
+![Screenshot 2021-02-14 at 17.06.05](https://ruslanmv.com/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%202021-02-14%20at%2017.06.05.png)
 
 
 
 1 Under **Connections**, select **Create**.
 
-![](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-13%2520at%252015.17.39.png)
+![](https://ruslanmv.com/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%202021-02-13%20at%2015.17.39.png)
 
 
 
@@ -338,7 +338,7 @@ Once you've entered these values, select **Save and Add Another**.
 
 
 
-![connection-aws-credentials](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/connection-aws-credentials.png)
+![connection-aws-credentials](https://ruslanmv.com/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/connection-aws-credentials.png)
 
 
 
@@ -356,11 +356,11 @@ Once you've entered these values, select **Save**.
 
 
 
-![cluster-details](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/cluster-details.png)
+![cluster-details](https://ruslanmv.com/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/cluster-details.png)
 
 
 
-![connection-redshift](https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/connection-redshift.png)
+![connection-redshift](https://ruslanmv.com/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/connection-redshift.png)
 
 
 
@@ -374,7 +374,7 @@ Start the DAG by switching it state from OFF to ON.
 
 
 
-<img src="https://ruslanmv.github.io/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%25202021-02-14%2520at%252017.08.19.png" style="zoom:50%;" />
+<img src="https://ruslanmv.com/assets/images/posts/2021-02-14-Data-Pipeline-with-Airflow/Screenshot%202021-02-14%20at%2017.08.19.png" style="zoom:50%;" />
 
 In the DAG, add `default parameters` according to these guidelines
 
