@@ -16,11 +16,7 @@ You'll be provided with a helpers class that contains all the SQL transformation
 
 
 
-![example-dag](./images/example-dag-3315853.png)
 
-
-
-Example DAG
 
 There are different ways to install **Airflow**, I will present two ways, one is given by the using of containers such **Docker** and the other manual.  
 
@@ -49,10 +45,12 @@ We would like to construct a flow like this
 
 
 
-![img](https://video.udacity-data.com/topher/2019/January/5c48ba31_example-dag/example-dag.png)
+
+![example-dag](./images/example-dag-3315853.png)
 
 
 
+Example DAG
 
 
 
