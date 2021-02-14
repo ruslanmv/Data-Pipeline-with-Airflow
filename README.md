@@ -49,7 +49,7 @@ We would like to construct a flow like this
 
 
 
-![img](./images/screenshot-2019-01-21-at-20.55.39.png)
+![img](https://video.udacity-data.com/topher/2019/January/5c48ba31_example-dag/example-dag.png)
 
 
 
